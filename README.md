@@ -89,7 +89,7 @@ done as follows:
 ```ocaml
 type 'a tree =
   | Leaf
-  | Node int * 'a * 'a tree * 'a tree
+  | Node of int * 'a * 'a tree * 'a tree
 ```
 
 Now each `Node` value also stores a value of type `'a` in addition 
@@ -320,7 +320,7 @@ takes a list of numbers and increments each element to obtain a new
 list:
 
 ```ocaml
-let rec incr xs = function
+let rec incr = function
   | [] -> []
   | x :: xs -> 1 + x :: incr xs
 ```
@@ -354,7 +354,7 @@ We can use this notation to simplify the definitions of `scale` and
 `incr` even further:
 
 ```ocaml
-let scale factor = map (( *) factor)
+let scale factor = map (( * ) factor)
 let incr = map ((+) 1)
 ```
 
