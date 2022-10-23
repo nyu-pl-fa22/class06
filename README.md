@@ -552,7 +552,7 @@ follows:
 let reverse xs = fold_left (fun xs x -> x :: xs) [] xs
 ```
 
-If we replaced `foldl` by `foldr` in this definition:
+If we replaced `fold_left` by `fold_right` in this definition:
 
 ```ocaml
 fold_right (fun x xs -> x :: xs) xs []
