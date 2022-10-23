@@ -89,7 +89,7 @@ done as follows:
 ```ocaml
 type 'a tree =
   | Leaf
-  | Node int * 'a * 'a tree * 'a tree
+  | Node of int * 'a * 'a tree * 'a tree
 ```
 
 Now each `Node` value also stores a value of type `'a` in addition 
